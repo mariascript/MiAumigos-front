@@ -65,9 +65,9 @@ export default function Home() {
         {activePage === "petDetails" && <SobrePets pet={selectedPet} onBack={() => navigate("pets")} onNavigate={navigate} />}
         {activePage === "how" && <Como onNavigate={navigate} />}
         {activePage === "orgs" && <Ongs />}
-        {activePage === "stories" && <Historias />}
+        {activePage === "stories" && <Historias onNavigate={navigate} />}
         {activePage === "help" && <Ajuda />}
-        {activePage === "adoption" && <Form />}
+        {activePage === "adoption" && <Form onNavigate={navigate} />}
         {activePage === "login" && <LoginCadastro onNavigate={navigate} />}
         {activePage === "match" && <Match onNavigate={navigate} />}
       </main>

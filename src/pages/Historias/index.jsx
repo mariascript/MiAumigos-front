@@ -1,8 +1,7 @@
-import { Heart } from "lucide-react";
 import { stories, team } from "../Home/data";
 import { SectionHeading } from "../Home/shared";
 
-function HeroHistorias() {
+function HeroHistorias({ onNavigate }) {
   return (
     <section className="historias-hero">
       <div className="historias-hero__text">
@@ -15,7 +14,9 @@ function HeroHistorias() {
           através do MIAUmigos.
         </p>
         <div className="historias-hero__actions">
-          <button className="btn btn--primary">Quero fazer meu match</button>
+          <button className="btn btn--primary" onClick={() => onNavigate("login")}>
+            Quero fazer meu match
+          </button>
         </div>
       </div>
 
@@ -103,8 +104,8 @@ function Relatos() {
   );
 }
 
-// CTA 
-function VoceTambemPodeMudar() {
+// CTA
+function VoceTambemPodeMudar({ onNavigate }) {
   return (
     <section className="cta-mudar">
       <img
@@ -121,7 +122,7 @@ function VoceTambemPodeMudar() {
           Milhares de pets estão esperando por alguém como você. Que tal ser o
           próximo capítulo de uma história incrível?
         </p>
-        <button className="btn btn--primary btn--lg">
+        <button className="btn btn--primary btn--lg" onClick={() => onNavigate("login")}>
           Fazer meu match agora
         </button>
       </div>
@@ -130,7 +131,7 @@ function VoceTambemPodeMudar() {
 }
 
 // export
-export default function Historias({ homeBlock = false }) {
+export default function Historias({ homeBlock = false, onNavigate }) {
   if (homeBlock) {
     return (
       <section className="content-section soft-band">
@@ -146,10 +147,10 @@ export default function Historias({ homeBlock = false }) {
 
   return (
     <div className="historias-page">
-      <HeroHistorias />
+      <HeroHistorias onNavigate={onNavigate} />
       <QuemEstaPorTras />
       <Relatos />
-      <VoceTambemPodeMudar />
+      <VoceTambemPodeMudar onNavigate={onNavigate} />
     </div>
   );
 }

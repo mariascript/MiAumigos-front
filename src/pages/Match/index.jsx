@@ -38,6 +38,14 @@ const questions = [
   },
 ];
 
+const introBenefits = [
+  "Compatibilidade com sua rotina",
+  "Pets ideais para seu espaço",
+  "Recomendações personalizadas",
+  "Matches mais compatíveis com você",
+  "Processo simples e acolhedor",
+];
+
 const matchPets = pets.slice(0, 3).map((pet, index) => ({
   ...pet,
   score: [96, 91, 87][index],
@@ -78,17 +86,17 @@ export default function Match({ onNavigate }) {
           <p>
             Responda algumas perguntas e descubra pets que combinam com sua rotina e seu jeito de viver.
           </p>
-          <ul>
-            <li>✔ Compatibilidade com sua rotina</li>
-            <li>✔ Pets ideais para seu espaço</li>
-            <li>✔ Recomendações personalizadas</li>
-            <li>✔ Matches mais compatíveis com você</li>
-            <li>✔ Processo simples e acolhedor</li>
+          <ul className="match-benefits">
+            {introBenefits.map((benefit) => (
+              <li key={benefit}>
+                <CheckCircle2 size={18} />
+                {benefit}
+              </li>
+            ))}
           </ul>
-          <p className="match-intro-note">💛 O começo de uma nova amizade.</p>
           {stage === "intro" && (
             <button className="primary-action" onClick={() => setStage("profile")}>
-              <Heart size={17} fill="currentColor" />
+              <PawPrint size={17} />
               Iniciar Match
             </button>
           )}
