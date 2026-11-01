@@ -302,24 +302,46 @@ export const faqs = [
     question: "Quais documentos são necessários para efetuar uma doação?",
     answer: "Normalmente nome, CPF, contato e comprovante do pagamento quando a doação for financeira.",
   },
-    {
+  {
     question: "Como funciona a verificação do adotante?",
     answer: "O sistema realiza uma validação básica de identidade, endereço e informações do ambiente para trazer mais segurança ao processo de adoção.",
   },
-      {
+  {
     question: "Quais informações são analisadas no formulário?",
     answer: "São analisadas informações como rotina, espaço disponível, experiência com animais, presença de outros pets e estilo de vida do adotante.",
   },
-    {
+  {
     question: "Posso cadastrar um pet para adoção?",
     answer: "Sim. ONGs e protetores independentes podem cadastrar animais diretamente na plataforma.",
   },
-      {
+  {
     question: "O que acontece após a adoção?",
     answer: "Após a adoção, o sistema realiza check-ins automatizados durante os primeiros 90 dias para acompanhar a adaptação do pet e do adotante.",
   },
-      {
+  {
     question: "O que são os check-ins de 90 dias?",
     answer: "São acompanhamentos automáticos feitos pela plataforma para ajudar no processo de adaptação e incentivar uma adoção responsável.",
+  },
+];
+export const team = [
+  {
+    name: "Mateus Galdino",
+    role: "Desenvolvedor Back-end, colaborou com a equipe no desenvolvimento do MIAUmigos, unindo tecnologia e impacto social.",
+    photo: "/mateus.png",
+  },
+  {
+    name: "Maria de Fátima",
+    role: "Desenvolvedora Full Stack, apaixonada por pets e inovação, contribuiu para a identidade visual e idealização do MIAUmigos, promovendo a adoção responsável.",
+    photo: "/download.png",
+  },
+  {
+    name: "Mariana Beltrão",
+    role: "Desenvolvedora Back-end, busca criar soluções tecnológicas e idealizou a proposta de tornar a adoção mais segura e acessível.",
+    photo: "/mariana.png",
+  },
+  {
+    name: "Vanessa Lima",
+    role: "Desenvolvedora Front-end apaixonada por tecnologia e impacto social, acredita no poder da colaboração para transformar a vida dos animais.",
+    photo: "/vanessa.png",
   },
 ];

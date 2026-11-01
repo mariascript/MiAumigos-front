@@ -2,17 +2,12 @@ import "./style.css";
 import { useState } from "react";
 import {
   Bell,
-  CalendarCheck,
   CheckCircle2,
   ChevronDown,
   ChevronRight,
-  Dog,
-  HandHeart,
   Heart,
-  Home as HomeIcon,
   MapPin,
   Menu,
-  MessageCircle,
   PawPrint,
   Search,
   ShieldCheck,
@@ -119,7 +114,7 @@ function Header({ activePage, menuOpen, onMenu, onNavigate }) {
             <UserCircle size={19} />
           </button>
           <button className="match-nav-button" onClick={() => onNavigate("login")}>
-            <Heart size={16} fill="currentColor" />
+            <PawPrint size={16} />
             Fazer Match
           </button>
         </div>
@@ -195,32 +190,9 @@ function Hero({ onNavigate, onSearch }) {
             />
           </form>
 
-          <div className="hero-filter-controls">
-            <button onClick={() => onNavigate("pets")}>
-              <Dog size={16} />
-              Cachorro
-              <ChevronDown size={14} />
-            </button>
-            <button onClick={() => onNavigate("pets")}>
-              <MapPin size={16} />
-              Até 10km
-              <ChevronDown size={14} />
-            </button>
-            <button onClick={() => onNavigate("pets")}>
-              <PawPrint size={16} />
-              Porte
-              <ChevronDown size={14} />
-            </button>
-            <button onClick={() => onNavigate("pets")}>
-              <CalendarCheck size={16} />
-              Idade
-              <ChevronDown size={14} />
-            </button>
-          </div>
-
           <div className="hero-actions">
             <button className="primary-action" onClick={() => onNavigate("login")}>
-              <Heart size={17} fill="currentColor" />
+              <PawPrint size={17} />
               Encontrar meu match
             </button>
           </div>
@@ -268,10 +240,10 @@ function PetPreview({ onNavigate, onSelectPet }) {
 
 function HowItWorks() {
   const steps = [
-    { title: "Cadastre-se", text: "Conte sobre você e o tipo de pet ideal.", icon: CalendarCheck },
-    { title: "Receba matches", text: "Nosso algoritmo encontra pets compatíveis.", icon: PawPrint },
-    { title: "Converse", text: "Fale com a ONG ou protetor responsável.", icon: MessageCircle },
-    { title: "Adoção com amor", text: "Finalize a adoção e realize um novo melhor amigo.", icon: HomeIcon },
+    { title: "Cadastre-se", text: "Conte sobre você e o tipo de pet ideal." },
+    { title: "Receba matches", text: "Nosso algoritmo encontra pets compatíveis." },
+    { title: "Converse", text: "Fale com a ONG ou protetor responsável." },
+    { title: "Adoção com amor", text: "Finalize a adoção e realize um novo melhor amigo." },
   ];
 
   return (
@@ -281,13 +253,10 @@ function HowItWorks() {
           <span>Como funciona?</span>
           <h2>Um processo simples, seguro e cheio de amor.</h2>
         </div>
-        <div className="timeline">
-          {steps.map(({ title, text, icon: Icon }, index) => (
-            <article className="timeline-step" key={title}>
-              <div className="timeline-icon">
-                <Icon size={28} />
-              </div>
-              <span>{index + 1}</span>
+        <div className="how-steps">
+          {steps.map(({ title, text }, index) => (
+            <article className="how-step" key={title}>
+              <span className="how-step-number">{String(index + 1).padStart(2, "0")}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -332,23 +301,14 @@ function StoriesBlock({ onNavigate }) {
 function SupportBlock() {
   return (
     <section className="home-section">
-      <div className="home-container support-block">
-        <div className="support-icon">
-          <Heart size={34} fill="currentColor" />
-        </div>
-        <div>
+      <div className="home-container support-banner">
+        <div className="support-banner-copy">
           <span>Rede de cuidado</span>
           <h2>Sua ajuda mantém pets cuidados e prontos para adoção.</h2>
         </div>
         <div className="support-actions">
-          <button className="primary-action">
-            <HandHeart size={17} />
-            Seja voluntário
-          </button>
-          <button className="secondary-action">
-            <Heart size={17} />
-            Faça uma doação
-          </button>
+          <button className="primary-action">Seja voluntário</button>
+          <button className="banner-secondary">Faça uma doação</button>
         </div>
       </div>
     </section>

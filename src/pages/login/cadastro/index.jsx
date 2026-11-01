@@ -24,10 +24,6 @@ export default function LoginCadastro({ onNavigate }) {
     <section className="auth-page standalone-page">
       <div className="auth-panel">
         <div className="auth-copy">
-          <span>
-            <Heart size={14} fill="currentColor" />
-            MiAUmigos Match
-          </span>
           <h1>{isLogin ? "Bem-vindo de volta!" : "Crie sua conta"}</h1>
           <p>
             {isLogin
