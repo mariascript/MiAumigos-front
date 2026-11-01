@@ -330,7 +330,7 @@ export const team = [
     photo: "/mateus.png",
   },
   {
-    name: "Maria de Fátima",
+    name: "Maria Pereira",
     role: "Desenvolvedora Full Stack, apaixonada por pets e inovação, contribuiu para a identidade visual e idealização do MIAUmigos, promovendo a adoção responsável.",
     photo: "/download.png",
   },
